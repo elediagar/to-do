@@ -90,7 +90,8 @@ body {
     margin-bottom: 2em;
 }
 
-button{
+button,
+#btn {
     background-color: tomato;
     border: none;
     cursor: pointer;

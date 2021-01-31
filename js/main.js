@@ -1,6 +1,6 @@
-let sectionTasks = document.querySelector('#lista')
+const sectionTasks = document.querySelector('#lista')
 
-
+//----- PRINT TASK
 const printAllTasks = function (pTaskList) {
     sectionTasks.innerHTML = "";
     for (let task of pTaskList) {
@@ -9,7 +9,7 @@ const printAllTasks = function (pTaskList) {
 }
 
 const printOneTask = function (pTask) {
-    
+
     let li = document.createElement('li');
     let button = document.createElement('button');
 
@@ -26,7 +26,46 @@ const printOneTask = function (pTask) {
     sectionTasks.appendChild(li)
 }
 
-printAllTasks(listaTareas)
+printAllTasks(listaTareas);
+
+//----- ADD TASK FROM FORM
+
+const inputTitle = document.querySelector('#titulo');
+const inputPriority = document.querySelector('#prioridad');
+
+let idTask = listaTareas.length
+
+const btnForm = document.querySelector('#btn');
+
+btnForm.addEventListener('click', getDataForm)
+
+function getDataForm(event) {
+    event.preventDefault(); 
+
+    const title = inputTitle.value;
+    const priority = inputPriority.value;
+
+    if (title != "" && priority != "") {
+        const newTask = {
+            id: ++idTask, 
+            titulo: title,
+            prioridad: priority,
+        };
+        saveTask(newTask);
+    } else {
+        alert('Completa todos los campos');
+    }
+}
+
+function saveTask (pTask){
+    listaTareas.push(pTask);
+    printOneTask(pTask);
+    console.log(listaTareas);
+}
+
+
+
+
 
 //----------Funciones
 
