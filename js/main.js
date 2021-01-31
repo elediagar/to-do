@@ -1,6 +1,7 @@
 const sectionTasks = document.querySelector('#lista')
 const inputTitle = document.querySelector('#titulo');
 const inputPriority = document.querySelector('#prioridad-input');
+const selectPriority = document.querySelector('#prioridad-filter');
 
 
 //----- PRINT TASK
@@ -93,7 +94,7 @@ printAllTasks(listaTareas)
 
 //----- FILTER TASK BY PRIORITY
 
-const selectPriority = document.querySelector('#prioridad-filter');
+
 
 selectPriority.addEventListener('change', getPriority);
 
@@ -107,12 +108,30 @@ function getPriority(event) {
     }
 }
 
-
-
 function filterByPriority(pPriority, pTaskList) {
     const listaFiltrada = pTaskList.filter(task => task.prioridad == pPriority);
 
     return listaFiltrada;
+}
+
+//----- FILTER TASK BY WORD
+
+
+let inputWord = document.querySelector('#buscador');
+
+inputWord.addEventListener('keydown', getInputData);
+
+function getInputData(event) {
+    if (event.keyCode == 13) {
+        let wordSearch = inputWord.value;
+        let taskListFound = searchByWord(wordSearch, listaTareas);
+        printAllTasks(taskListFound)
+    }
+}
+
+function searchByWord(pWord, pTaskList) {
+    const filteredList = pTaskList.filter(task => task.titulo.toLowerCase().includes(pWord.toLowerCase()))
+    return filteredList
 }
 
 
