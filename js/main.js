@@ -1,6 +1,7 @@
 const sectionTasks = document.querySelector('#lista')
 const inputTitle = document.querySelector('#titulo');
-const inputPriority = document.querySelector('#prioridad');
+const inputPriority = document.querySelector('#prioridad-input');
+
 
 //----- PRINT TASK
 const printAllTasks = function (pTaskList) {
@@ -29,9 +30,11 @@ const printOneTask = function (pTask) {
 
     sectionTasks.appendChild(li)
 
+
+
 }
 
-printAllTasks(listaTareas);
+
 
 //----- ADD TASK FROM FORM
 
@@ -45,7 +48,7 @@ btnForm.addEventListener('click', getDataForm)
 function getDataForm(event) {
     event.preventDefault();
 
-    
+
 
     const title = inputTitle.value;
     const priority = inputPriority.value;
@@ -60,7 +63,7 @@ function getDataForm(event) {
         saveTask(newTask);
     } else {
         alert('Completa todos los campos');
-    } 
+    }
 }
 
 function saveTask(pTask) {
@@ -68,6 +71,8 @@ function saveTask(pTask) {
     printOneTask(pTask);
     console.log(listaTareas);
 }
+
+
 
 //-------- DELETE TASK
 
@@ -84,10 +89,33 @@ function deleteTask(event) {
 
 }
 
+printAllTasks(listaTareas)
 
 //----- FILTER TASK BY PRIORITY
 
-const btnFilter = 
+const selectPriority = document.querySelector('#prioridad-filter');
+
+selectPriority.addEventListener('change', getPriority);
+
+function getPriority(event) {
+    let priority = event.target.value;
+    if (priority != "") {
+        let listaTasksFiltrada = filterByPriority(priority, listaTareas);
+        printAllTasks(listaTasksFiltrada)
+    } else {
+        printAllTasks(listaTareas)
+    }
+}
+
+
+
+function filterByPriority(pPriority, pTaskList) {
+    const listaFiltrada = pTaskList.filter(task => task.prioridad == pPriority);
+
+    return listaFiltrada;
+}
+
+
 
 
 
@@ -98,16 +126,25 @@ const btnFilter =
 
 cambiar color del li como cojones lo hago!!!
 
-let li = document.querySelector('.tarea')
 
+if (listaTareas.prioridad == 'Baja') {
+        li.style.backgroundColor = 'black'
+    } else if (listaTareas.prioridad == 'Media') {
+        li.style.backgroundColor = 'white'
+    } else if (listaTareas.prioridad == 'Alta') {
+        li.style.backgroundColor = 'tomato'
+    } else {
+        alert('Completa todos los campos');
+    }
 
+    if (inputPriority.value == 'Baja') {
+        li.style.backgroundColor = 'black'
+    } else if (inputPriority.value == 'Media') {
+        li.style.backgroundColor = 'white'
+    } else if (inputPriority.value== 'Alta') {
+        li.style.backgroundColor = 'tomato'
+    } else {
+        alert('Completa todos los campos');
+    }
 
-if (priority == 'Baja') {
-    li.style.backgroundColor = 'black'
-} else if (priority == 'Media') {
-    li.style.backgroundColor = 'white'
-} else if (priority == 'Alta') {
-    li.style.backgroundColor = 'tomato'
-} else {
-    alert('Completa todos los campos');
-} */
+ */
