@@ -1,0 +1,174 @@
+/* Reset ------- */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* Main ------- */
+
+:root {
+    --maincolor: #5cd4b6;
+    --seccolor: #2cbb97;
+    --fonts: 1em;
+    --fontm: 1.2em;
+    --fontl: 1.5em;
+}
+  
+body { 
+    font-family: Arial, Helvetica, sans-serif;
+    background: #d6fff5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+
+.wrapper{
+    background-color: var(--maincolor);
+    padding: 20px;
+    box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.2)
+   
+}
+
+/* form -------*/
+
+*{
+    box-sizing: border-box;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2em;
+}
+
+button{
+    background-color: tomato;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+button:hover{
+    background-color: tomato;
+}
+
+.form select {
+    padding: 7px;
+    border: none;
+    margin: 5px 0;
+}
+
+.form input {
+    border: none;
+    padding: 7px;
+}
+
+
+.form button{
+    padding: 7px;
+}
+
+
+/* tareas -------*/
+
+.tareas .filtrado {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+} 
+
+.tareas .filtrado select{
+    width: 49%;
+    border: none;
+}
+
+.tareas .filtrado input{
+    width: 49%;
+    height: 30px;
+    border: none;
+
+}
+
+.tareas ul li{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 3em;
+    background-color: var(--maincolor);
+    border-bottom: 1px solid white; 
+    height: 70px;
+}
+
+.tareas ul li:hover{
+    background-color: var(--seccolor);
+
+}
+
+.tareas ul li a{
+    width: 75%;
+    padding-top: 2px;
+    color: white;
+    text-decoration: none;
+}
+
+.tareas ul li button{
+    width: 20%;
+}
+
+
+
+
+
+
+
+
