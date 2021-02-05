@@ -16,6 +16,7 @@ const printAllTasks = function (pTaskList) {
 const printOneTask = function (pTask) {
 
     let li = document.createElement('li');
+    li.classList.add(`${pTask.prioridad}`);
     let button = document.createElement('button');
 
     li.innerHTML = `<a href="">${pTask.titulo}</a>`
@@ -24,15 +25,12 @@ const printOneTask = function (pTask) {
     button.appendChild(contentButton);
     li.appendChild(button)
 
-    li.classList.add('tarea2');
+
     button.classList.add('delete');
     button.dataset.id = pTask.id;
     button.addEventListener('click', deleteTask);
 
     sectionTasks.appendChild(li)
-
-
-
 }
 
 
@@ -48,8 +46,6 @@ btnForm.addEventListener('click', getDataForm)
 
 function getDataForm(event) {
     event.preventDefault();
-
-
 
     const title = inputTitle.value;
     const priority = inputPriority.value;

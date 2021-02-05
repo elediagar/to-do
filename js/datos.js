@@ -1,19 +1,19 @@
 
-const listaTareas = new Array (
+const listaTareas = new Array(
     {
         id: 1,
         titulo: 'Tarea de ejemplo numero uno',
-        prioridad: 'Baja',
+        prioridad: 'baja',
     },
     {
         id: 2,
         titulo: 'Tarea de ejemplo numero dos',
-        prioridad: 'Media'
+        prioridad: 'media'
     },
     {
         id: 3,
         titulo: 'Tarea de ejemplo numero tres',
-        prioridad: 'Alta',
+        prioridad: 'alta',
     },
 )
 

@@ -146,7 +146,6 @@ button:hover{
     flex-wrap: wrap;
     justify-content: space-between;
     height: 3em;
-    background-color: var(--maincolor);
     border-bottom: 1px solid white; 
     height: 70px;
 }
@@ -159,13 +158,24 @@ button:hover{
 .tareas ul li a{
     display: inline-block;
     width: 75%;
-    padding: 8% 0;
+    padding: 15px 0;
     color: white;
     text-decoration: none;
 }
 
 .tareas ul li button{
     width: 20%;
+}
+
+.baja {
+    background-color: rgb(113, 211, 173);
+}
+.media {
+    background-color: rgb(50, 173, 126);
+}
+
+.alta {
+    background-color: rgb(26, 143, 98);
 }
 
 
